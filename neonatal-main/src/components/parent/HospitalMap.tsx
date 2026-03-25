@@ -656,7 +656,7 @@ const HospitalMap: React.FC = () => {
 
         if (mappedHospitals.length > 0) {
           const uniqueHospitals = Array.from(
-            new Map(
+            new globalThis.Map(
               mappedHospitals.map((hospital) => [hospital.name, hospital]),
             ).values(),
           )
