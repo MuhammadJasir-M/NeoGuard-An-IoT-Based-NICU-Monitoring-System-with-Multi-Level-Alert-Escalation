@@ -3,6 +3,7 @@ import DashboardLayout from "@/components/layout/DashboardLayout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import CustomSelect from "@/components/ui/CustomSelect";
 import { useAuth } from "@/contexts/AuthContext";
 import { useData } from "@/contexts/DataContext";
 import {
@@ -279,32 +280,29 @@ const FeedingStatusPage = () => {
                   <label className="text-sm font-semibold text-muted-foreground mb-2 block">
                     Select Baby
                   </label>
-                  <select
+                  <CustomSelect
                     value={formBaby}
-                    onChange={(e) => setFormBaby(e.target.value)}
-                    className="w-full rounded-xl border border-input bg-background px-3 py-2.5 text-sm focus:ring-2 focus:ring-primary"
-                  >
-                    <option value="">-- Select --</option>
-                    {babies.map((b) => (
-                      <option key={b.id} value={b.id}>
-                        {b.name} (Bed {b.bedNumber})
-                      </option>
-                    ))}
-                  </select>
+                    onChange={setFormBaby}
+                    placeholder="-- Select --"
+                    options={babies.map((b) => ({
+                      value: b.id,
+                      label: `${b.name} (Bed ${b.bedNumber})`,
+                    }))}
+                  />
                 </div>
                 <div>
                   <label className="text-sm font-semibold text-muted-foreground mb-2 block">
                     Feeding Type
                   </label>
-                  <select
+                  <CustomSelect
                     value={formType}
-                    onChange={(e) => setFormType(e.target.value as FeedingType)}
-                    className="w-full rounded-xl border border-input bg-background px-3 py-2.5 text-sm focus:ring-2 focus:ring-primary"
-                  >
-                    <option value="breast_milk">🤱 Breast Milk</option>
-                    <option value="formula">🍼 Formula</option>
-                    <option value="tube_feeding">💉 Tube Feeding</option>
-                  </select>
+                    onChange={(value) => setFormType(value as FeedingType)}
+                    options={[
+                      { value: "breast_milk", label: "🤱 Breast Milk" },
+                      { value: "formula", label: "🍼 Formula" },
+                      { value: "tube_feeding", label: "💉 Tube Feeding" },
+                    ]}
+                  />
                 </div>
                 <div>
                   <label className="text-sm font-semibold text-muted-foreground mb-2 block">

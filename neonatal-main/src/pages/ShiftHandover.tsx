@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
+import CustomSelect from "@/components/ui/CustomSelect";
 import { useAuth } from "@/contexts/AuthContext";
 import { useData } from "@/contexts/DataContext";
 import {
@@ -406,34 +407,28 @@ const ShiftHandover = () => {
                 <label className="text-sm font-semibold text-muted-foreground mb-2 block">
                   Select Baby
                 </label>
-                <select
+                <CustomSelect
                   value={selectedBaby}
-                  onChange={(e) => setSelectedBaby(e.target.value)}
-                  className="w-full rounded-xl border border-input bg-background px-3 py-2.5 text-sm focus:ring-2 focus:ring-primary"
-                >
-                  <option value="">-- Select a baby --</option>
-                  {babies.map((b) => (
-                    <option key={b.id} value={b.id}>
-                      {b.name} (Bed {b.bedNumber})
-                    </option>
-                  ))}
-                </select>
+                  onChange={setSelectedBaby}
+                  placeholder="-- Select a baby --"
+                  options={babies.map((b) => ({
+                    value: b.id,
+                    label: `${b.name} (Bed ${b.bedNumber})`,
+                  }))}
+                />
               </div>
               <div>
                 <label className="text-sm font-semibold text-muted-foreground mb-2 block">
                   Category
                 </label>
-                <select
+                <CustomSelect
                   value={selectedCategory}
-                  onChange={(e) => setSelectedCategory(e.target.value)}
-                  className="w-full rounded-xl border border-input bg-background px-3 py-2.5 text-sm focus:ring-2 focus:ring-primary"
-                >
-                  {CATEGORIES.map((c) => (
-                    <option key={c.value} value={c.value}>
-                      {c.label}
-                    </option>
-                  ))}
-                </select>
+                  onChange={setSelectedCategory}
+                  options={CATEGORIES.map((c) => ({
+                    value: c.value,
+                    label: c.label,
+                  }))}
+                />
               </div>
             </div>
             <Textarea
