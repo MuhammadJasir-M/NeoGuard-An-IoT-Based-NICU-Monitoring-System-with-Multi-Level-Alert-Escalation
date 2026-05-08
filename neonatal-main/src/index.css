@@ -1412,3 +1412,79 @@
 .dark .bg-background {
   background-color: transparent !important;
 }
+
+/* ── Critical alert default state ── */
+.dark .alert-card.alert-card--critical {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 0, 60, 0.12) 0%,
+    rgba(255, 0, 60, 0.08) 100%
+  ) !important;
+
+  border-color: rgba(255, 64, 96, 0.4) !important;
+
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25) !important;
+
+  transition:
+    box-shadow 0.35s ease,
+    border-color 0.35s ease,
+    background 0.35s ease,
+    transform 0.35s ease;
+}
+
+/* ── Glow only on hover ── */
+.dark .alert-card.alert-card--critical:hover {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 0, 60, 0.22) 0%,
+    rgba(255, 0, 60, 0.14) 100%
+  ) !important;
+
+  border-color: rgba(255, 64, 96, 0.85) !important;
+
+  box-shadow:
+    0 0 24px rgba(255, 0, 60, 0.55),
+    0 0 48px rgba(255, 0, 60, 0.38),
+    0 0 90px rgba(255, 0, 60, 0.22),
+    0 12px 36px rgba(0, 0, 0, 0.38) !important;
+
+  transform: translateY(-3px) scale(1.01);
+}
+
+/* ── Warning alert default state ── */
+.dark .alert-card.alert-card--warning {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 170, 0, 0.12) 0%,
+    rgba(255, 170, 0, 0.08) 100%
+  ) !important;
+
+  border-color: rgba(255, 170, 0, 0.4) !important;
+
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25) !important;
+
+  transition:
+    box-shadow 0.35s ease,
+    border-color 0.35s ease,
+    background 0.35s ease,
+    transform 0.35s ease;
+}
+
+/* ── Strong yellow glow on hover ── */
+.dark .alert-card.alert-card--warning:hover {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 170, 0, 0.22) 0%,
+    rgba(255, 170, 0, 0.14) 100%
+  ) !important;
+
+  border-color: rgba(255, 190, 40, 0.85) !important;
+
+  box-shadow:
+    0 0 24px rgba(255, 170, 0, 0.55),
+    0 0 48px rgba(255, 170, 0, 0.38),
+    0 0 90px rgba(255, 170, 0, 0.22),
+    0 12px 36px rgba(0, 0, 0, 0.38) !important;
+
+  transform: translateY(-3px) scale(1.01);
+}
