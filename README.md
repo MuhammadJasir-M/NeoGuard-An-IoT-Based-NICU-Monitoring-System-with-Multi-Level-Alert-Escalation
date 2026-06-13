@@ -1130,5 +1130,4 @@ If NeoGuard has been useful for your research or project, please consider giving
 **Built with ❤️ for safer neonatal care and stronger family connections**
 
 [Report Bug](https://github.com/yourusername/neoguard/issues) · [Request Feature](https://github.com/yourusername/neoguard/issues) · [Clinical Disclaimer](#️-clinical-disclaimer)
-
 </div>
