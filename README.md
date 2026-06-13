@@ -2,7 +2,6 @@
 
 <!-- Add a logo at neonateral-main/public/logo.png and uncomment the line below -->
 <!-- <img src="neonateral-main/public/logo.png" alt="NeoGuard Logo" width="140" /> -->
-
 # 🍼 NeoGuard
 
 **IoT-Powered Neonatal Intensive Care Monitoring System**
